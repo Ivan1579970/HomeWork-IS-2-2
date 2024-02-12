@@ -1,26 +1,18 @@
-let array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-console.log("Двумерный массив:");
-for (let i of array) 
+let users = [{ name: "Alice", age: 25 }, { name: "Bob", age: 30 }, { name: "Carol", age: 22 }];
+console.log("Перед изменением:");
+  
+for (let user of users) 
 {
-    for (let item of i)
-    {
-      console.log(item);
-    }
-  }
+    console.log(user.name);
+}
   
-  let sum = 0;
-  for (let a of array) 
-  {
-    for (let item of a) 
-    {
-      sum += item;
-    }
-  }
-  console.log("Сумма всех элементов:", sum);
+for (let user of users) 
+{
+    user.age += 1;
+}
+console.log("После изменения:");
   
-  
-  console.log("Количество элементов в каждом вложенном массиве:");
-  for (let b of array) 
-  {
-    console.log(b.length);
-  }
+for (let user of users)
+{
+    console.log(`${user.name} теперь ${user.age} лет`);
+}
